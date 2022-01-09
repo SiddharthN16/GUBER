@@ -7,7 +7,7 @@ const Protected = ({ children }) => {
   console.log(`Private User Check: ${user}`);
 
   if (!user) {
-    return <Navigate to="/signin" />;
+    return <Navigate to="/login" />;
   }
   return children;
 };
