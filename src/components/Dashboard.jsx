@@ -1,54 +1,37 @@
-import { Button, Card, Image } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { ref, onValue } from "firebase/database";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/UserAuthContext";
-import GridSystem from "../components/GridSystem";
+import GridSystem from "./GridSystem";
 
 const Dashboard = () => {
   const { logOut, user } = useUserAuth();
   const navigate = useNavigate();
 
-  const databaseMimic = [
-    {
-      id: 1,
-      image: "https://i.insider.com/50f967f56bb3f7830a000019",
-      location: "Test 1 House",
-      volunteers: 1,
-    },
-    {
-      id: 2,
-      image: "https://i.insider.com/50f967f56bb3f7830a000019",
-      location: "Test 2 House",
-      volunteers: 2,
-    },
-    {
-      id: 3,
-      image: "https://i.insider.com/50f967f56bb3f7830a000019",
-      location: "Test 3 House",
-      volunteers: 3,
-    },
-    {
-      id: 4,
-      image: "https://i.insider.com/50f967f56bb3f7830a000019",
-      location: "Test 4 House",
-      volunteers: 4,
-    },
-  ];
+  const [events, setEvents] = useState();
 
-  const Cards = (props) => {
-    const { image, location, volunteers } = props;
+  const eventInfo = ref(db, "/Events");
 
-    return (
-      <div className="mb-3">
-        <Card key="index">
-          <Image src={image} className="card-img-top" fluid />
-          <Card.Body>
-            <Card.Title>{location}</Card.Title>
-            <Card.Text>{volunteers}</Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  };
+  useEffect(() => {
+    const getEvents = async () => {
+      const eventData = await onValue(eventInfo, (snapshot) => {
+        var data = snapshot.val();
+        var output = [];
+        if (data) {
+          var keys = Object.keys(data);
+          for (let i = 0; i < keys.length; i++) {
+            if (keys[i] != "safe") {
+              output.push(data[keys[i]]);
+            }
+          }
+        }
+        setEvents(output);
+      });
+    };
+    getEvents();
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -59,17 +42,45 @@ const Dashboard = () => {
     }
   };
 
+  // console.log(events.length);
+
+  if (events) {
+    return (
+      <div>
+        <>
+          <div className="events-container">
+            {events.map((event) => (
+              <GridSystem
+                items={events.length}
+                name={event.name}
+                description={event.desc}
+                volunteers={event.volunteers}
+                image={event.image}
+              />
+            ))}
+          </div>
+
+          <div className="p-4 box mt-3 text-center">
+            Volunteer Dashboard <br />
+            {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
+            {user && user.email}
+          </div>
+          <div className="d-grid gap-2">
+            <Button variant="primary" onClick={handleLogout}>
+              Log out
+            </Button>
+          </div>
+        </>
+      </div>
+    );
+  }
+
   return (
     <div>
       <>
-        <GridSystem colCount={3} md={6}>
-          {databaseMimic.length > 0
-            ? databaseMimic.map((item) => (
-                <Cards key={item.id} image={item.image} location={item.location} volunteers={item.volunteers} />
-              ))
-            : [<p>No Garbage Reported</p>]}
-        </GridSystem>
-
+        <div class="events-container">
+          <h1>Loading...</h1>
+        </div>
         <div className="p-4 box mt-3 text-center">
           Volunteer Dashboard <br />
           {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
