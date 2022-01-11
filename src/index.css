@@ -728,3 +728,7 @@ form h2 {
 .sub-CaptureSecond {
   margin-bottom: 50px !important;
 }
+
+.reportSub {
+  margin-bottom: 100px;
+}
