@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Protected from "./components/Protected";
+import Capture from "./components/Capture";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 
 function App() {
@@ -26,6 +27,14 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route
+                path="/attend"
+                element={
+                  <Protected>
+                    <Capture />
+                  </Protected>
+                }
+              />
             </Routes>
           </UserAuthContextProvider>
         </Col>

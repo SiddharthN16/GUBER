@@ -1,25 +1,15 @@
-import { useState, setShow } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Card, Image, Button, Modal } from "react-bootstrap";
 
 const Attend = ({ items, name, description, volunteers, image }) => {
+  let navigate = useNavigate();
+
   const [show, setShow] = useState(false);
-  const [fullscreen, setFullscreen] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
-  };
-
-  const cleanupEvent = () => {
-    return (
-      <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Full Screen</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Modal body content</Modal.Body>
-      </Modal>
-    );
   };
 
   return (
@@ -40,12 +30,15 @@ const Attend = ({ items, name, description, volunteers, image }) => {
         <Modal.Header closeButton>
           <Modal.Title>Cleanup Confirmation</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to attend this cleanup?</Modal.Body>
+        <Modal.Body>
+          When you arrive at the cleanup location, click on the "Lets Clean!" button to take a picture of your garbage
+          for review.
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={cleanupEvent}>
+          <Button variant="primary" onClick={() => navigate("/attend")}>
             Let's Clean!
           </Button>
         </Modal.Footer>
