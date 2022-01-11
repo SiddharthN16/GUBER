@@ -1,10 +1,9 @@
 import { useState, setShow } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Card, Image, Button, Modal } from "react-bootstrap";
+import { Container, Button, Modal } from "react-bootstrap";
 
 const Attend = ({ items, name, description, volunteers, image }) => {
   const [show, setShow] = useState(false);
-  const [fullscreen, setFullscreen] = useState(true);
 
   let navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const Attend = ({ items, name, description, volunteers, image }) => {
       <Container>
         <div className="event-holder">
           <div className="text-container">
-            <img src={image}></img>
+            <img src={image} alt="Spotted Garbage"></img>
             <h3>{name}</h3>
             <p style={{ fontWeight: 600, color: "#ABFAA3" }}>{volunteers} Volunteer Spots</p>
             <p>{description}</p>
