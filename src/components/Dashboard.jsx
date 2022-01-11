@@ -4,7 +4,7 @@ import { ref, onValue } from "firebase/database";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/UserAuthContext";
-import GridSystem from "./GridSystem";
+import Attend from "./Attend";
 
 const Dashboard = () => {
   const { logOut, user } = useUserAuth();
@@ -22,7 +22,7 @@ const Dashboard = () => {
         if (data) {
           var keys = Object.keys(data);
           for (let i = 0; i < keys.length; i++) {
-            if (keys[i] != "safe") {
+            if (keys[i] !== "safe") {
               output.push(data[keys[i]]);
             }
           }
@@ -50,7 +50,7 @@ const Dashboard = () => {
         <>
           <div className="events-container">
             {events.map((event) => (
-              <GridSystem
+              <Attend
                 items={events.length}
                 name={event.name}
                 description={event.desc}
@@ -78,7 +78,7 @@ const Dashboard = () => {
   return (
     <div>
       <>
-        <div class="events-container">
+        <div className="events-container">
           <h1>Loading...</h1>
         </div>
         <div className="p-4 box mt-3 text-center">
