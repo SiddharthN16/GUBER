@@ -3,6 +3,7 @@ import { storage } from "../firebase";
 import { ref as uploadRef, uploadBytesResumable } from "firebase/storage";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const Capture = () => {
   const [image, setImage] = useState("");
@@ -51,19 +52,22 @@ const Capture = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={redirect}>
+    <div class="capSec2">
+      <Header />
+      <form className="captureSec" onSubmit={redirect}>
         <h1>Image</h1>
-        <p>Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done</p>
-        <label for="imgUpload" class="imgInputField" style={{ backgroundImage: `URL(${image})` }}>
+        <p style={{ width: "80%" }}>
+          Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!
+        </p>
+        <label for="imgUpload" className="imgInputField" style={{ backgroundImage: `URL(${image})` }}>
           "Upload Image Here"
           <input id="imgUpload" type="file" accept="image/*" onChange={showUploaded} />
         </label>
-        <Button variant="primary" onClick={storeImg}>
+        <Button className="sub-Capture" onClick={storeImg}>
           Submit
         </Button>
 
-        <Button variant="secondary" type="submit">
+        <Button variant="secondary" className="sub-CaptureSecond" type="submit">
           Return to Dashboard
         </Button>
       </form>

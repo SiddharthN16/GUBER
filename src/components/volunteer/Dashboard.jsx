@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { ref, onValue } from "firebase/database";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useUserAuth } from "../context/UserAuthContext";
+import { useUserAuth } from "../../context/UserAuthContext";
 import Attend from "./Attend";
+import Header from "../Header.jsx";
 
 const Dashboard = () => {
   const { logOut, user } = useUserAuth();
@@ -42,12 +43,22 @@ const Dashboard = () => {
     }
   };
 
-  // console.log(events.length);
-
   if (events) {
     return (
       <div>
+        <Header />
         <>
+          <div className="p-4 box mt-3 text-center">
+            <span className="dashTitle">Volunteer Dashboard</span> <br />
+            {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
+            {user && user.email}
+          </div>
+          <div className="d-grid gap-2 logOutBox">
+            <Button variant="primary" onClick={handleLogout}>
+              Log out
+            </Button>
+          </div>
+
           <div className="events-container">
             {events.map((event) => (
               <Attend
@@ -59,17 +70,6 @@ const Dashboard = () => {
               />
             ))}
           </div>
-
-          <div className="p-4 box mt-3 text-center">
-            Volunteer Dashboard <br />
-            {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
-            {user && user.email}
-          </div>
-          <div className="d-grid gap-2">
-            <Button variant="primary" onClick={handleLogout}>
-              Log out
-            </Button>
-          </div>
         </>
       </div>
     );
@@ -77,16 +77,17 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Header />
       <>
         <div className="events-container">
           <h1>Loading...</h1>
         </div>
         <div className="p-4 box mt-3 text-center">
-          Volunteer Dashboard <br />
+          <span class="dashTitle">Volunteer Dashboard</span> <br />
           {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
           {user && user.email}
         </div>
-        <div className="d-grid gap-2">
+        <div className="d-grid gap-2 logOutBox">
           <Button variant="primary" onClick={handleLogout}>
             Log out
           </Button>

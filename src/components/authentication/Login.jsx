@@ -1,32 +1,50 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useUserAuth } from "../context/UserAuthContext";
-import { Form, Alert } from "react-bootstrap";
+import { useUserAuth } from "../../context/UserAuthContext";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
+import GoogleButton from "react-google-button";
+import Header from "../Header.jsx";
 
-const Signup = () => {
+const Login = ({ children }) => {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const { signUp } = useUserAuth();
-  let navigate = useNavigate();
+  const [error, setError] = useState("");
+  const { logIn, googleSignIn, user } = useUserAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      await signUp(email, password);
-      navigate("/login");
+      await logIn(email, password);
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
     }
   };
 
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+
+    try {
+      await googleSignIn();
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  if (user) {
+    return <Navigate replace to="/dashboard" />;
+  }
+
   return (
     <>
+      <Header />
       <div className="p-4 box">
-        <h2 className="mb-3">Volunteer Signup</h2>
+        <h2 className="mb-3">Volunteer Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -39,16 +57,20 @@ const Signup = () => {
 
           <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
-              Sign up
+              Log In
             </Button>
           </div>
         </Form>
+        <hr />
+        <div className="googleAuthBtn">
+          <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
+        </div>
       </div>
       <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/login">Log In</Link>
+        Don't have an account? <Link to="/signup">Sign up</Link>
       </div>
     </>
   );
 };
 
-export default Signup;
+export default Login;
