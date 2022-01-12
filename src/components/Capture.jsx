@@ -25,6 +25,7 @@ const Capture = () => {
   };
 
   const storeImg = (event) => {
+    event.preventDefault();
     if (uploaded === false && image !== "") {
       let storageRef = uploadRef(storage, `/review/${imgName}`);
       uploadBytesResumable(storageRef, imgFile).on("state_changed", (snapshot) => {
@@ -34,6 +35,7 @@ const Capture = () => {
         if ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 === 100) {
           alert("Upload Done!");
           setUpload(true);
+          navigate("/dashboard");
         }
       });
     } else {
@@ -45,28 +47,18 @@ const Capture = () => {
     }
   };
 
-  const redirect = (event) => {
-    event.preventDefault();
-    navigate("/dashboard");
-  };
 
   return (
-    <div class="capSec2">
-      <form className="captureSec" onSubmit={redirect}>
+    <div class = "capSec2">
+      <form className = "captureSec">
         <h1>Image</h1>
-        <p style={{ width: "80%" }}>
-          Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!
-        </p>
+        <p style = {{width: "80%"}}>Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!</p>
         <label for="imgUpload" className="imgInputField" style={{ backgroundImage: `URL(${image})` }}>
           "Upload Image Here"
           <input id="imgUpload" type="file" accept="image/*" onChange={showUploaded} />
         </label>
-        <Button className="sub-Capture" onClick={storeImg}>
+        <Button className = "sub-Capture" onClick={storeImg}>
           Submit
-        </Button>
-
-        <Button variant="secondary" className="sub-CaptureSecond" type="submit">
-          Return to Dashboard
         </Button>
       </form>
     </div>

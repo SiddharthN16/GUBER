@@ -40,7 +40,7 @@ const Login = ({ children }) => {
   }
 
   return (
-    <div id="login">
+    <div id = "login">
       <div className="p-4 mt-3 box">
         <h2 className="mb-3">Volunteer Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
@@ -59,7 +59,7 @@ const Login = ({ children }) => {
             </Button>
           </div>
         </Form>
-        <div className="googleAuthBtn">
+        <div className = "googleAuthBtn">
           <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
         </div>
       </div>

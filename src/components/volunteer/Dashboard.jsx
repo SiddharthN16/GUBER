@@ -42,19 +42,21 @@ const Dashboard = () => {
     }
   };
 
+
   if (events) {
     return (
-      <div id="dashboard">
+      <div id = "dashboard">
         <>
           <div className="p-4 box mt-3 text-center">
-            <span className="dashTitle">Volunteer Dashboard</span> <br />
+            <span className = "dashTitle">Volunteer Dashboard</span> <br />
             {user && user.email}
-            <div className="d-grid gap-2 logOutBox">
-              <Button variant="primary" onClick={handleLogout}>
-                Log out
-              </Button>
-            </div>
+			<div className="d-grid gap-2 logOutBox">
+            <Button variant="primary" onClick={handleLogout}>
+              Log out
+            </Button>
           </div>
+          </div>
+
 
           <div className="events-container">
             {events.map((event) => (
@@ -67,25 +69,26 @@ const Dashboard = () => {
               />
             ))}
           </div>
+
         </>
       </div>
     );
   }
 
   return (
-    <div id="dashboard">
-      <div className="events-container">
-        <h1>Loading...</h1>
-      </div>
-      <div className="p-4 box mt-3 text-center">
-        <span class="dashTitle">Volunteer Dashboard</span> <br />
-        {user && user.email}
-        <div className="d-grid gap-2 logOutBox">
+    <div id = "dashboard">
+       <div className="events-container">
+          <h1>Loading...</h1>
+        </div>
+        <div className="p-4 box mt-3 text-center">
+          <span class = "dashTitle">Volunteer Dashboard</span> <br />
+          {user && user.email}
+		<div className="d-grid gap-2 logOutBox">
           <Button variant="primary" onClick={handleLogout}>
             Log out
           </Button>
         </div>
-      </div>
+        </div>
     </div>
   );
 };

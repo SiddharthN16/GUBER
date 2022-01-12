@@ -1,19 +1,21 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
 
-body {
+body{
   background-color: #222222;
   width: 100%;
 }
@@ -23,13 +25,13 @@ body {
   background-color: #fff;
 }
 
-.googleAuthBtn {
+.googleAuthBtn{
   display: flex;
   justify-content: center;
 }
 
 .g-btn {
-  background-color: #abfaa3;
+  background-color: #ABFAA3;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -47,7 +49,7 @@ body {
   text-align: center;
 }
 
-.btn-primary {
+.btn-primary{
   margin-bottom: 10px;
 }
 
@@ -56,7 +58,7 @@ body {
   background-color: rgb(42, 42, 42);
   display: flex;
   height: 70vh;
-  padding-top: 15vh;
+  padding-top:15vh;
   padding-bottom: 15vh;
   width: 100vw;
   z-index: -10;
@@ -66,17 +68,18 @@ body {
 }
 
 #logo {
-  width: 30%;
+  width:30%;
   max-width: 700px;
   min-width: 300px;
+  
 }
 
 #login-form {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   justify-content: space-evenly;
   align-items: center;
-  color: white;
+  color:white;
 }
 
 #submit-section {
@@ -87,6 +90,7 @@ body {
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 
 #submit-section div {
   display: flex;
@@ -104,11 +108,11 @@ body {
   margin-left: 0.7rem;
 }
 
-#googleSign h3 {
+#googleSign h3{
   font-weight: 500;
 }
 
-#submit-section button {
+#submit-section button{
   display: flex;
   align-content: center;
   justify-content: center;
@@ -117,29 +121,29 @@ body {
   width: 50px;
   border: none;
   height: 50px;
-  background-color: #abfaa3;
+  background-color: #ABFAA3;
   transition: 0.2s ease all;
   box-sizing: border-box;
 }
 
-#submit-section button:hover {
+#submit-section button:hover{
   background-color: #222222;
-  border: 1px solid #abfaa3;
+  border: 1px solid #ABFAA3
 }
 
-#submit-section button .log-btn {
+#submit-section button .log-btn{
   transition: 0.2s ease all;
 }
 
-#submit-section button:hover .log-btn {
-  stroke: #abfaa3;
+#submit-section button:hover .log-btn{
+  stroke: #ABFAA3;
 }
 
-#submit-section button svg {
-  margin-top: 10px;
+#submit-section button svg{
+  margin-top:10px;
 }
 
-#input-fields {
+#input-fields{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,91 +155,94 @@ body {
   font-size: 18px;
   color: #ffffff;
   border: none;
-  padding-left: 1rem;
+  padding-left:1rem;
   box-shadow: 0px 2px #ffffff;
   padding-right: 1rem;
   transition: 0.4s;
   width: 180px;
 }
 
-#text-input:focus {
+#text-input:focus{
   outline: none;
-  box-shadow: 0px 2px #abfaa3;
+  box-shadow: 0px 2px #ABFAA3;
   transition: 0.4s;
 }
 
-#input-fields div {
+#input-fields div{
   display: flex;
   flex-direction: row;
   background-color: #22222200;
   margin-bottom: 2rem;
 }
 
-#input-fields div svg {
+#input-fields div svg{
   margin-left: 0.5rem;
   margin-right: 1rem;
 }
 
-#switch {
-  background-color: #abfaa3;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
+#switch{
+  background-color: #ABFAA3;
+  padding-right:2rem;
+  padding-left:2rem;
+  padding-top:0.7rem;
+  padding-bottom:0.7rem;
   font-weight: 600;
-  outline: none;
+  outline:none;
   border: none;
   font-size: 20px;
-  margin-top: 0.5rem;
+  margin-top:0.5rem;
   border-radius: 100rem;
   transition: 0.2s ease all;
   box-sizing: border-box;
 }
 
-#switch:hover {
+#switch:hover{
   background-color: #222222;
-  border: 1px solid #abfaa3;
-  color: #abfaa3;
+  border: 1px solid #ABFAA3;
+  color: #ABFAA3;
+  
 }
 
-#nav-bar {
+#nav-bar{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #222222;
+  background-color:#222222;
 }
 
-#nav-bar img {
+#nav-bar img{
   width: 130px;
   margin: 5px;
 }
 
-#nav-bar a {
+#nav-bar a{
   text-decoration: none;
   color: white;
 }
 
-#nav-bar svg {
-  margin-right: 15px;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
+#nav-bar svg{
+  margin-right:15px;
+  padding:10px;
+  width:60px;
+  height: 60px;
   border-radius: 50%;
   box-sizing: border-box;
   transition: 0.4s ease all;
 }
 
-#nav-bar svg .user {
+#nav-bar svg .user{
   transition: 0.4s ease all;
   stroke: white;
 }
-#nav-bar svg:hover .user {
-  stroke: #abfaa3;
+#nav-bar svg:hover .user{
+  stroke: #ABFAA3;
+  
 }
 
 #nav-bar svg:hover {
-  border: 1px solid #abfaa3;
+  border: 1px solid #ABFAA3;
+  
 }
 
 .subtitle {
@@ -249,43 +256,44 @@ body {
   font-size: x-large;
 }
 
-.call-to-action {
+.call-to-action{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
-  text-align: center;
-  background-color: #222222;
+  padding:50px;
+  text-align:  center;
+  background-color: #222222
+  
 }
 
-.call-to-action img {
+.call-to-action img{
   width: 300px;
-  margin-top: -60px;
+  margin-top:-60px;
 }
 
-.text {
+.text{
   margin-bottom: 50px;
 }
 
-.call-to-action .text h1 {
-  color: #abfaa3;
+.call-to-action .text h1{
+  color: #ABFAA3;
   margin-bottom: 10px;
 }
 
-.call-to-action .text h4 {
+.call-to-action .text h4{
   font-size: 16px;
   font-weight: 600;
-  color: white;
+  color: white
 }
 
-.call-to-action a {
-  background-color: #abfaa3;
+.call-to-action a{
+  background-color: #ABFAA3;
   text-decoration: none;
   color: #222222;
   margin: 20px;
   font-weight: 700;
-  font-size: 20px;
+  font-size:20px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-right: 32px;
@@ -294,12 +302,13 @@ body {
   box-shadow: 0px 2px 6px #22222236;
   transition: 0.24s ease all;
   text-align: center;
+  
 }
 
-.call-to-action a:hover {
+.call-to-action a:hover{
   background-color: #222222;
-  border: 1px solid #abfaa3;
-  color: #abfaa3;
+  border: 1px solid #ABFAA3;
+  color: #ABFAA3;
   box-sizing: border-box;
 }
 
@@ -319,35 +328,36 @@ body {
   overflow: hidden;
 }
 
-.event-holder img {
+.event-holder img{
   border-radius: 8px;
   object-fit: cover;
   margin-bottom: 20px;
 }
 
-.event-holder p {
-  margin-top: 5px;
+.event-holder p{
+  margin-top:5px;
   font-size: 12px;
   line-height: 12px;
-}
+} 
 
-.event-holder {
+.event-holder{
   width: 350px;
   height: 350px;
+  
 }
 
-.event-holder img {
+.event-holder img{
   width: 300px;
   height: 150px;
 }
 
-.dashAttend button {
-  background-color: #abfaa3;
+.dashAttend button{
+  background-color: #ABFAA3;
   text-decoration: none;
   color: #222222;
   font-weight: 700;
-  margin-top: 10px;
-  font-size: 12px;
+  margin-top:10px;
+  font-size:12px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-right: 16px;
@@ -357,22 +367,22 @@ body {
   transition: 0.2s ease all;
   text-align: center;
   box-sizing: border-box;
-  border-color: #abfaa3;
+  border-color: #ABFAA3;
 }
 
-.dashAttend button:hover {
+.dashAttend button:hover{
   background-color: #222222;
-  border: 1px solid #abfaa3;
-  color: #abfaa3;
+  border: 1px solid #ABFAA3;
+  color: #ABFAA3;
 }
 
-.event-holder a {
-  background-color: #abfaa3;
+.event-holder a{
+  background-color: #ABFAA3;
   text-decoration: none;
   color: #222222;
   font-weight: 700;
-  margin-top: 10px;
-  font-size: 12px;
+  margin-top:10px;
+  font-size:12px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-right: 16px;
@@ -384,10 +394,10 @@ body {
   box-sizing: border-box;
 }
 
-.event-holder a:hover {
+.event-holder a:hover{
   background-color: #222222;
-  border: 1px solid #abfaa3;
-  color: #abfaa3;
+  border: 1px solid #ABFAA3;
+  color: #ABFAA3;
 }
 
 .events-container {
@@ -398,32 +408,35 @@ body {
   background-color: white;
 }
 
-.event-holder a {
-  padding-right: 100px;
-  padding-left: 100px;
+.event-holder a{
+    padding-right:100px;
+    padding-left:100px;
 }
 
-.event-holder button {
-  padding-right: 100px;
-  padding-left: 100px;
+.event-holder button{
+    padding-right:100px;
+    padding-left:100px;
 }
 
-.event-holder h3 {
-  font-size: 14px !important;
+.event-holder h3{
+  font-size:14px !important;
 }
 
 @media only screen and (min-width: 800px) {
-  .call-to-action .text h1 {
+
+  .call-to-action .text h1{
     font-size: 42px;
   }
 
-  .call-to-action .text h4 {
+  .call-to-action .text h4{
     font-size: 32px;
   }
+
+
 }
 
-.contact {
-  position: relative;
+.contact{
+  position:relative;
   width: 100%;
   color: white;
   background-color: #222222;
@@ -433,53 +446,54 @@ body {
   align-items: center;
 }
 
-.contact p {
+.contact p{
   font-size: 18px;
   font-weight: 500;
+  padding: 15px
+}
+
+.contact a{
+  color: #ABFAA3;
   padding: 15px;
 }
 
-.contact a {
-  color: #abfaa3;
-  padding: 15px;
-}
-
-.leave {
+.leave{
   position: absolute;
   top: 40px;
   right: 20px;
-  padding: 10px;
+  padding:10px;
   border-radius: 50%;
+
 }
 
-.leave path {
+.leave path{
   stroke: white;
   transition: 0.2s ease all;
 }
 
-.leave:hover path {
-  stroke: #abfaa3;
+.leave:hover path{
+  stroke: #ABFAA3;
 }
 
 .leave:hover {
-  background-color: #222222;
+  background-color:#222222;
 }
 
-.call-to-action-report {
+.call-to-action-report{
   text-align: center;
-  margin: 40px;
+  margin:40px;
 }
 
-.call-to-action-report {
+.call-to-action-report{
   color: rgb(120, 228, 108);
 }
 
-input[type="file"] {
+input[type="file"]{
   display: none;
 }
 
-.imgInputField {
-  background-color: #abfaa3;
+.imgInputField{
+  background-color: #ABFAA3;
   display: flex;
   justify-content: center;
   color: #222222;
@@ -492,7 +506,7 @@ input[type="file"] {
   max-width: 300px;
   max-height: 300px;
   border-radius: 20px;
-  border: 3px solid #222222;
+  border: 3px solid #222222; 
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -501,7 +515,7 @@ input[type="file"] {
 
 form {
   display: flex;
-  align-items: center;
+  align-items:center; 
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
@@ -510,19 +524,19 @@ form {
 
 .location {
   display: flex;
-  align-items: center;
+  align-items:center; 
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
 
-Button[type="submit"] {
-  background-color: #abfaa3;
+Button[type="submit"]{
+  background-color: #ABFAA3;
   border: none;
   text-decoration: none;
   color: #222222;
   font-weight: 700;
-  font-size: 24px;
+  font-size:24px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-right: 24px;
@@ -533,26 +547,27 @@ Button[type="submit"] {
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
-  margin-top: 50px;
+  margin-top:50px;
 }
 
-Button[type="submit"]:hover {
+Button[type="submit"]:hover{
   background-color: white;
   color: #222222;
 }
 
-.btn-primary:hover {
+.btn-primary:hover{
   background-color: #222222;
   color: white;
 }
 
-#upload {
-  background-color: #abfaa3;
+#upload{
+  margin-bottom: 150px;
+  background-color: #ABFAA3;
   border: none;
   text-decoration: none;
   color: #222222;
   font-weight: 700;
-  font-size: 24px;
+  font-size:24px;
   padding-top: 8px;
   padding-bottom: 10px;
   padding-right: 24px;
@@ -563,21 +578,21 @@ Button[type="submit"]:hover {
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
-  margin-top: 50px;
+  margin-top:50px;
 }
 
-#upload:hover {
+#upload:hover{
   background-color: white;
   color: #222222;
 }
 
-.location h2 {
+.location h2{
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-form h2 {
+form h2{
   color: white;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -590,7 +605,7 @@ form h2 {
   background-color: rgba(255, 255, 255, 0.438);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center; 
   z-index: 100;
 }
 
@@ -601,30 +616,31 @@ form h2 {
   z-index: 110;
 }
 
-.card img {
+.card img{
   width: 70vw;
   height: 40vh;
   object-fit: cover;
   border-radius: 20px;
-  margin-left: 5vw;
-  margin-top: 5vh;
+  margin-left:5vw;
+  margin-top:5vh;
 }
 
-.card h3 {
-  color: #abfaa3;
-  margin-left: 40px;
+.card h3{
+  color: #ABFAA3;
+  margin-left:40px;
   margin-top: 10px;
 }
 
-.card p {
+.card p{
   margin-left: 40px;
-  color: white;
-  margin-bottom: 30px;
+  color:white;
+  margin-bottom:30px;
 }
+
 
 .checked {
   background-color: rgb(146, 202, 255);
-  color: rgba(0, 0, 0, 0);
+  color: rgba(0,0,0,0);
   border: 2px solid rgb(112, 191, 255);
   transition: 0.4ms ease all;
 }
@@ -640,19 +656,20 @@ form h2 {
   overflow: hidden;
 }
 
-.mapSub {
+.mapSub{
   width: auto !important;
 }
 
-.info-input {
+.info-input{
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 20px;
   color: white;
+  
 }
 
-.input-box {
-  padding-top: 8px;
+.input-box{
+  padding-top:8px;
   padding-bottom: 8px;
   padding-right: 12px;
   padding-left: 12px;
@@ -661,62 +678,62 @@ form h2 {
   border: none;
 }
 
-.map div {
+.map div{
   width: auto;
 }
 
-.report-sec {
-  margin-top: -50px;
-  margin-bottom: -100px;
+.report-sec{
+  margin-top:-50px;
+  margin-bottom:-100px;
+  background-color: #222222
+}
+
+.cardsDash{
+  width:70%;
   background-color: #222222;
 }
 
-.cardsDash {
-  width: 70%;
-  background-color: #222222;
-}
-
-.dashAttend {
+.dashAttend{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.dashTitle {
+.dashTitle{
   color: #222222;
   font-weight: 700;
-  font-size: 24px;
+  font-size:24px;
 }
 
-.logOutBox {
+.logOutBox{
   display: flex;
   justify-content: center;
 }
 
-.logOutBox button {
-  width: 200px;
+.logOutBox button{
+  width: 200px
 }
 
-.captureSec {
+.captureSec{
   text-align: center;
   color: white;
   background-color: #222222;
-  margin-top: 60px;
+  margin-top:60px;
 }
 
-.capSec2 {
+.capSec2{
   background-color: #222222;
   height: 100vh;
-  margin-top: -60px;
+  margin-top:-60px;
 }
 
-.sub-Capture {
-  background-color: #abfaa3 !important;
+.sub-Capture{
+  background-color: #ABFAA3 !important;
   border: none !important;
   text-decoration: none;
   color: #222222 !important;
   font-weight: 700 !important;
-  font-size: 24px !important;
+  font-size:24px !important;
   padding-top: 8px !important;
   padding-bottom: 10px !important;
   padding-right: 24px !important;
@@ -727,50 +744,56 @@ form h2 {
   text-align: center;
   box-sizing: border-box !important;
   cursor: pointer;
-  margin-top: 50px;
+  margin-top:50px;
 }
 
-.sub-Capture:hover {
+.sub-Capture:hover{
   background-color: white !important;
   color: #222222 !important;
 }
 
-.sub-CaptureSecond {
+.sub-CaptureSecond{
   margin-bottom: 50px !important;
 }
 
-.reportSub {
+.reportSub{
   margin-bottom: 100px;
 }
 
-#cont {
-  min-height: calc(100vh - 75px - 107px);
+
+#cont{
+  min-height: calc(100vh - 75px - 115px)
 }
 
 .col {
-  padding: 0;
+  padding:0;
 }
 
-@media only screen and (min-width: 1200px) {
-  .box {
-    width: 25%;
+@media only screen and (min-width: 1200px){
+  .box{
+    width:25%;
   }
 }
 
-#dashboard {
+
+#dashboard{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#login {
+#login{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#signup {
+#signup{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.agreements{
+  margin: 40px;
 }
