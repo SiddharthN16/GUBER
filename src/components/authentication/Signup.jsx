@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import Header from "../Header.jsx";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -25,9 +24,8 @@ const Signup = () => {
   };
 
   return (
-    <>
-      <Header />
-      <div className="p-4 box">
+    <div id="signup">
+      <div className="p-4 mt-3 box">
         <h2 className="mb-3">Volunteer Signup</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -49,7 +47,7 @@ const Signup = () => {
       <div className="p-4 box mt-3 text-center">
         Already have an account? <Link to="/login">Log In</Link>
       </div>
-    </>
+    </div>
   );
 };
 

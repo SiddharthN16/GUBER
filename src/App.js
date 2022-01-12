@@ -1,5 +1,9 @@
-import Landing from "./components/Landing.jsx";
-import Report from "./components/Report.jsx";
+import Landing from "./components/Landing";
+import Report from "./components/Report";
+import Contact from "./components/Contact";
+import Terms from "./components/Terms";
+import Privacy from "./components/Privacy";
+import Header from "./components/Header";
 
 import "./index.css";
 
@@ -19,28 +23,34 @@ function App() {
     <Row>
       <Col>
         <UserAuthContextProvider>
-          <Routes>
-            <Route
-              path="/dashboard"
-              element={
-                <Protected>
-                  <Dashboard />
-                </Protected>
-              }
-            />
-            <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route exact path="/report" element={<Report />} />
-            <Route
-              path="/attend"
-              element={
-                <Protected>
-                  <Capture />
-                </Protected>
-              }
-            />
-          </Routes>
+          <Header />
+          <div id="cont">
+            <Routes>
+              <Route
+                path="/dashboard"
+                element={
+                  <Protected>
+                    <Dashboard />
+                  </Protected>
+                }
+              />
+              <Route path="/" element={<Landing />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route exact path="/report" element={<Report />} />
+              <Route path="/tos" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route
+                path="/attend"
+                element={
+                  <Protected>
+                    <Capture />
+                  </Protected>
+                }
+              />
+            </Routes>
+          </div>
+          <Contact />
         </UserAuthContextProvider>
       </Col>
     </Row>

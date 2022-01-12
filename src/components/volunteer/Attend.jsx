@@ -1,9 +1,10 @@
 import { useState, setShow } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Button, Modal } from "react-bootstrap";
+import { Container, Card, Image, Button, Modal } from "react-bootstrap";
 
 const Attend = ({ items, name, description, volunteers, image }) => {
   const [show, setShow] = useState(false);
+  const [fullscreen, setFullscreen] = useState(true);
 
   let navigate = useNavigate();
 

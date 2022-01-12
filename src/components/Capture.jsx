@@ -3,7 +3,6 @@ import { storage } from "../firebase";
 import { ref as uploadRef, uploadBytesResumable } from "firebase/storage";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
 
 const Capture = () => {
   const [image, setImage] = useState("");
@@ -53,7 +52,6 @@ const Capture = () => {
 
   return (
     <div class="capSec2">
-      <Header />
       <form className="captureSec" onSubmit={redirect}>
         <h1>Image</h1>
         <p style={{ width: "80%" }}>

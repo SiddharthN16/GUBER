@@ -4,7 +4,6 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Form, Alert } from "react-bootstrap";
 import GoogleButton from "react-google-button";
-import Header from "../Header.jsx";
 
 const Login = ({ children }) => {
   const [email, setEmail] = useState("");
@@ -41,9 +40,8 @@ const Login = ({ children }) => {
   }
 
   return (
-    <>
-      <Header />
-      <div className="p-4 box">
+    <div id="login">
+      <div className="p-4 mt-3 box">
         <h2 className="mb-3">Volunteer Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -61,7 +59,6 @@ const Login = ({ children }) => {
             </Button>
           </div>
         </Form>
-        <hr />
         <div className="googleAuthBtn">
           <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
         </div>
@@ -69,7 +66,7 @@ const Login = ({ children }) => {
       <div className="p-4 box mt-3 text-center">
         Don't have an account? <Link to="/signup">Sign up</Link>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import Header from "./Header.jsx";
 import { useState } from "react";
 import Map from "./Map.jsx";
 import { useNavigate } from "react-router-dom";
@@ -142,7 +141,6 @@ function Report() {
 
   return (
     <div className="report-sec">
-      <Header />
       <h1 className="call-to-action-report">See Garbage at your local park, or location?</h1>
       <div className="location">
         <h2>Location</h2>
@@ -178,7 +176,7 @@ function Report() {
           {" "}
           Upload Image
         </Button>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="reportSub">
           REPORT
         </Button>
       </form>

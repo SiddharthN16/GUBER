@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
 import Attend from "./Attend";
-import Header from "../Header.jsx";
 
 const Dashboard = () => {
   const { logOut, user } = useUserAuth();
@@ -45,18 +44,16 @@ const Dashboard = () => {
 
   if (events) {
     return (
-      <div>
-        <Header />
+      <div id="dashboard">
         <>
           <div className="p-4 box mt-3 text-center">
             <span className="dashTitle">Volunteer Dashboard</span> <br />
-            {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
             {user && user.email}
-          </div>
-          <div className="d-grid gap-2 logOutBox">
-            <Button variant="primary" onClick={handleLogout}>
-              Log out
-            </Button>
+            <div className="d-grid gap-2 logOutBox">
+              <Button variant="primary" onClick={handleLogout}>
+                Log out
+              </Button>
+            </div>
           </div>
 
           <div className="events-container">
@@ -76,23 +73,19 @@ const Dashboard = () => {
   }
 
   return (
-    <div>
-      <Header />
-      <>
-        <div className="events-container">
-          <h1>Loading...</h1>
-        </div>
-        <div className="p-4 box mt-3 text-center">
-          <span class="dashTitle">Volunteer Dashboard</span> <br />
-          {/* user.displayName ? user.displayName.split(" ")[0] : user.email.split("@")[0] */}
-          {user && user.email}
-        </div>
+    <div id="dashboard">
+      <div className="events-container">
+        <h1>Loading...</h1>
+      </div>
+      <div className="p-4 box mt-3 text-center">
+        <span class="dashTitle">Volunteer Dashboard</span> <br />
+        {user && user.email}
         <div className="d-grid gap-2 logOutBox">
           <Button variant="primary" onClick={handleLogout}>
             Log out
           </Button>
         </div>
-      </>
+      </div>
     </div>
   );
 };
