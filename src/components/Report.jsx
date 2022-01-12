@@ -110,50 +110,50 @@ function Report() {
   // used to store the image from the firebase
   function storeImg(event) {
     event.preventDefault();
-    // when the image is not uploaded, upload image
-    if (uploaded === false && image !== "") {
-      let storageRef = uploadRef(storage, `/images/${desc}${imgFile.name}`);
-      // upload all the bytes of the image
-      uploadBytesResumable(storageRef, imgFile).on("state_changed", (snapshot) => {
-        while ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 < 100) {
-          console.log((snapshot.totalBytes / snapshot.bytesTransferred) * 100 !== 100);
-        }
-        // when all bytes are transferred, upload is done
-        if ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 === 100) {
-          alert("Upload Done!");
-          setUpload(true);
-          setTimeout(function () {
-            uploadInfo();
-          }, 1200);
-        }
-      });
-    } else {
-      // throw errors
-      if (!imgFile) {
-        alert("Please Upload an Image of the location");
+    if (name && name !== "" && desc && desc !== "" && image && image !== "" && volunteers && volunteers !== "") {
+      // when the image is not uploaded, upload image
+      if (uploaded === false && image !== "") {
+        let storageRef = uploadRef(storage, `/images/${desc}${imgFile.name}`);
+        // upload all the bytes of the image
+        uploadBytesResumable(storageRef, imgFile).on("state_changed", (snapshot) => {
+          while ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 < 100) {
+            console.log((snapshot.totalBytes / snapshot.bytesTransferred) * 100 !== 100);
+          }
+          // when all bytes are transferred, upload is done
+          if ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 === 100) {
+            alert("Upload Done!");
+            setUpload(true);
+            setTimeout(function () {
+              uploadInfo();
+            }, 1200);
+          }
+        });
       } else {
-        alert("Image already uploaded");
+        // throw errors
+        if (!imgFile) {
+          alert("Please Upload an Image of the location");
+        } else {
+          alert("Image already uploaded");
+        }
       }
+    } else {
+      alert("Please fill in all the fields");
     }
   }
   // upload all the gathered report information from the form to upload to database
   function uploadInfo() {
-    if (name && name !== "" && desc && desc !== "" && image && image !== "" && volunteers && volunteers !== "") {
-      getDownloadURL(uploadRef(storage, `/images/${desc}${imgFile.name}`))
-        .then((url) => {
-          set(dbRef(database, `/Events/${desc}`), {
-            name: name,
-            desc: desc,
-            volunteers: volunteers,
-            image: url,
-          }).catch(alert);
-          setUpload(false);
-          navigate("/");
-        })
-        .catch(alert);
-    } else {
-      alert("Please fill in all the feilds");
-    }
+    getDownloadURL(uploadRef(storage, `/images/${desc}${imgFile.name}`))
+      .then((url) => {
+        set(dbRef(database, `/Events/${desc}`), {
+          name: name,
+          desc: desc,
+          volunteers: volunteers,
+          image: url,
+        }).catch(alert);
+        setUpload(false);
+        navigate("/");
+      })
+      .catch(alert);
   }
   // build the report page
   return (
