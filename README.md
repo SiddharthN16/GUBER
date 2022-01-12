@@ -8,7 +8,7 @@ Official Website Link: <strong>https://guber.pages.dev/<strong>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts (Requires Node.js and npm)
+## Available Scripts (Requires Node.js and npm) < Section Generated Automatically
 
 In the project directory, you can run:
 
@@ -30,7 +30,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Packages Used
+## Packages Used < Section Added Mannually
 
 ### `npm install @react-google-maps/api`
 
