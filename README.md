@@ -2,6 +2,7 @@
   <img src="https://cdn.discordapp.com/attachments/885601497134534696/930837139904663602/GuberArrowGreen_1.png" alt="Guber Logo" width="500"/>
  </p>
 <hr/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts (Requires Node.js and npm)
