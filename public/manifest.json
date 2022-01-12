@@ -3,7 +3,7 @@
   "name": "Simple Garbage Clean Ups",
   "icons": [
     {
-      "src": guber.svg",
+      "src": "guber.svg",
       "sizes": "any",
       "type": "image/x-icon"
     }
