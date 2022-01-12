@@ -16,7 +16,7 @@ import { UserAuthContextProvider } from "./context/UserAuthContext";
 import Capture from "./components/Capture";
 
 import { Route, Routes } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function App() {
   return (

@@ -46,15 +46,6 @@ function Report() {
     setVolunteers(e.target.value);
   }
 
-  let mapStyle = {
-    width: "80vw",
-    height: "80vw",
-    maxWidth: "600px",
-    maxHeight: "600px",
-    borderRadius: "20px",
-    overflow: "hidden",
-  };
-
   async function getAddress(lat, lng) {
     let reqLink = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`;
 
@@ -83,8 +74,6 @@ function Report() {
 
   if (!cords) {
     navigator.geolocation.getCurrentPosition(async function (position) {
-      let currLat = position.coords.latitude;
-      let currLng = position.coords.longitude;
       setCords({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
