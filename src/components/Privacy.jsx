@@ -136,20 +136,7 @@ const Privacy = () => {
           Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting
           so that it will refuse Cookies, our Service may use Cookies.
         </li>
-        <li>
-          <strong>Flash Cookies.</strong> Certain features of our Service may use local stored objects (or Flash
-          Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash
-          Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information
-          on how You can delete Flash Cookies, please read &quot;Where can I change the settings for disabling, or
-          deleting local shared objects?&quot; available at{" "}
-          <a
-            href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_"
-            rel="external nofollow noopener"
-            target="_blank"
-          >
-            https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
-          </a>
-        </li>
+        <li></li>
         <li>
           <strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic
           files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the
@@ -161,11 +148,7 @@ const Privacy = () => {
       <p>
         Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal
         computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web
-        browser. You can learn more about cookies here:{" "}
-        <a href="https://www.termsfeed.com/privacy-policy-generator/#faq-8" target="_blank">
-          Cookies by TermsFeed Generator
-        </a>
-        .
+        browser.
       </p>
       <p>We use both Session and Persistent Cookies for the purposes set out below:</p>
       <ul>
