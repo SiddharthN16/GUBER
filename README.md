@@ -4,7 +4,7 @@
 <hr/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts (Requires Node.js and npm)
 
 In the project directory, you can run:
 
@@ -41,32 +41,35 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Packages Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm install @react-google-maps/api`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Used to add the google maps; using the map and markers to display the user's selected location, and useJsApiLoader to load the map.<br/>
+Documentation refered to: https://react-google-maps-api-docs.netlify.app/
 
-### Code Splitting
+### `npm install bootstrap`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Used to quick style for rapid testing, helped us focus on functionality when developing systems that required more back-end work (login/signup/dashboard).<br/>
+Documentation refered to: https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
-### Analyzing the Bundle Size
+### `npm install firebase`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Used to access firebase resources (mainly storage and real time firebase) to upload and download data on a constant bases.<br/>
+Documentation refered to: https://firebase.google.com/docs
 
-### Making a Progressive Web App
+### `npm install react-router-dom`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Used to implment react routing for the web app.<br/>
+Documentation refered to: https://reactrouter.com/docs/en/v6
 
-### Advanced Configuration
+### `npm install react`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Used the React Js library to build this web app. <br/>
+Documentation refered to: https://reactjs.org/docs/getting-started.html
 
-### Deployment
+### Other Info: HTML Geolocation API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Used to get the other's location if they enabled their location, and is also used for the logic in case the user didn't enable their location.<br/>
+Documentation refered to: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
