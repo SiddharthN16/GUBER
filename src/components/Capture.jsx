@@ -51,7 +51,7 @@ const Capture = () => {
   return (
     <div class = "capSec2">
       <form className = "captureSec">
-        <h1>Image</h1>
+        <h1>Cleanup Image</h1>
         <p style = {{width: "80%"}}>Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!</p>
         <label for="imgUpload" className="imgInputField" style={{ backgroundImage: `URL(${image})` }}>
           "Upload Image Here"

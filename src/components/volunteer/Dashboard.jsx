@@ -45,50 +45,53 @@ const Dashboard = () => {
 
   if (events) {
     return (
-      <div id = "dashboard">
-        <>
-          <div className="p-4 box mt-3 text-center">
-            <span className = "dashTitle">Volunteer Dashboard</span> <br />
-            {user && user.email}
-			<div className="d-grid gap-2 logOutBox">
-            <Button variant="primary" onClick={handleLogout}>
-              Log out
-            </Button>
-          </div>
-          </div>
+      <div>
+        <div id = "dashboard">
+          <>
+            <div className="p-4 box mt-3 text-center dashCenter">
+              <span className = "dashTitle">Volunteer Dashboard</span> <br />
+              {user && user.email}
+              <div className="d-grid gap-2 logOutBox">
+                <Button variant="primary" onClick={handleLogout}>
+                  Log out
+                </Button>
+              </div>
+            </div>
+          </>
+        </div>
 
+        <div className="events-container2">
+          {events.map((event) => (
+            <Attend
+              items={events.length}
+              name={event.name}
+              description={event.desc}
+              volunteers={event.volunteers}
+              image={event.image}
+            />
+          ))}
+        </div>
 
-          <div className="events-container">
-            {events.map((event) => (
-              <Attend
-                items={events.length}
-                name={event.name}
-                description={event.desc}
-                volunteers={event.volunteers}
-                image={event.image}
-              />
-            ))}
-          </div>
-
-        </>
       </div>
     );
   }
 
   return (
-    <div id = "dashboard">
-       <div className="events-container">
-          <h1>Loading...</h1>
-        </div>
-        <div className="p-4 box mt-3 text-center">
+    <div>
+      <div id = "dashboard">
+        <div className="p-4 box mt-3 text-center dashCenter">
           <span class = "dashTitle">Volunteer Dashboard</span> <br />
           {user && user.email}
-		<div className="d-grid gap-2 logOutBox">
-          <Button variant="primary" onClick={handleLogout}>
-            Log out
-          </Button>
+		      <div className="d-grid gap-2 logOutBox">
+            <Button variant="primary" onClick={handleLogout}>
+              Log out
+            </Button>
+          </div>
         </div>
-        </div>
+      </div>
+      <div className="events-container2">
+        <h1>Loading...</h1>
+      </div>
     </div>
   );
 };

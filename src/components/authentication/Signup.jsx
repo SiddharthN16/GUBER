@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import logo from "../../assets/logo.svg"
+import passLogo from "../../assets/Password.svg";
+import userLogo from "../../assets/User-icon.svg";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -26,14 +29,17 @@ const Signup = () => {
   return (
     <div id="signup">
       <div className="p-4 mt-3 box">
+        <img src = {logo} style = {{width: "270px", height: "auto"}}/>
         <h2 className="mb-3">Volunteer Signup</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3 usernameFeild" controlId="formBasicEmail">
+            <img src = {userLogo} style = {{width: "25px"}}/>
             <Form.Control type="email" placeholder="Email address" onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3 pass" controlId="formBasicPassword">
+            <img src = {passLogo} style = {{width: "25px"}}/>
             <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
 

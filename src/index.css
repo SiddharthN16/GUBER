@@ -6,7 +6,9 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -247,13 +249,13 @@ body{
 
 .subtitle {
   text-align: center;
-  background-color: #9191919c;
-  box-shadow: 0px 4px 10px #2222226b;
+  background-color: #747474;
 }
 
 .subtitle h2 {
   padding: 15px;
   font-size: x-large;
+  margin-bottom: 0;
 }
 
 .call-to-action{
@@ -408,6 +410,15 @@ body{
   background-color: white;
 }
 
+.events-container2{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: white;
+  min-height: calc(100vh - 328px) !important;
+}
+
 .event-holder a{
     padding-right:100px;
     padding-left:100px;
@@ -449,12 +460,18 @@ body{
 .contact p{
   font-size: 18px;
   font-weight: 500;
-  padding: 15px
+  padding: 15px;
+  margin: 0 !important;
 }
 
 .contact a{
   color: #ABFAA3;
   padding: 15px;
+}
+
+.contact a:hover{
+  color: rgb(83, 156, 75);
+  transition: 0.2s ease all;
 }
 
 .leave{
@@ -481,7 +498,7 @@ body{
 
 .call-to-action-report{
   text-align: center;
-  margin:40px;
+  padding:40px;
 }
 
 .call-to-action-report{
@@ -683,7 +700,6 @@ form h2{
 }
 
 .report-sec{
-  margin-top:-50px;
   margin-bottom:-100px;
   background-color: #222222
 }
@@ -700,7 +716,7 @@ form h2{
 }
 
 .dashTitle{
-  color: #222222;
+  color: white;
   font-weight: 700;
   font-size:24px;
 }
@@ -716,15 +732,24 @@ form h2{
 
 .captureSec{
   text-align: center;
-  color: white;
+  color: #ABFAA3;
   background-color: #222222;
   margin-top:60px;
+  margin-bottom: 0px !important;
+  padding-bottom: 100px;
+}
+
+.captureSec p{
+  color: white;
 }
 
 .capSec2{
   background-color: #222222;
-  height: 100vh;
   margin-top:-60px;
+}
+
+.capSec2 h1{
+  padding: 40px;
 }
 
 .sub-Capture{
@@ -762,11 +787,17 @@ form h2{
 
 
 #cont{
-  min-height: calc(100vh - 75px - 115px)
+  min-height: calc(100vh - 75px - 57px);
+  background-color: #222222;
+}
+
+.row {
+  margin:0 !important;
 }
 
 .col {
-  padding:0;
+  padding:0 !important;
+  width:100% !important; 
 }
 
 @media only screen and (min-width: 1200px){
@@ -775,17 +806,31 @@ form h2{
   }
 }
 
+.box{
+  background-color: #222222;
+  color: white;
+  border:none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #dashboard{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #4b4b4b;
+}
+
+.dashCenter{
+  background-color: #4b4b4b;
 }
 
 #login{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #222222;
 }
 
 #signup{
@@ -795,5 +840,98 @@ form h2{
 }
 
 .agreements{
-  margin: 40px;
+  background-color:white;
+  padding: 40px;
+}
+
+#root{
+  width: 100%;
+}
+
+a[href="/login"]{
+  color: #ABFAA3;
+}
+
+a[href = "/login"]:hover{
+  color:rgb(83, 156, 75);
+}
+
+a[href="/signup"]{
+  color: #ABFAA3;
+}
+
+a[href = "/signup"]:hover{
+  color:rgb(83, 156, 75);
+}
+
+#formBasicEmail{
+  color: white;
+  background-color: #222222;
+  border: none;
+  box-shadow: 0px 3px white;
+  border-radius: 0px;
+  padding-bottom:10px;
+  margin-bottom: 30px;
+  margin-top:20px;
+  padding-left:5px;
+  margin-left: 10px;
+}
+
+#formBasicEmail:focus{
+  box-shadow: 0px 3px #ABFAA3;
+  transition: 500ms ease all;
+}
+
+#formBasicPassword{
+  color: white;
+  background-color: #222222;
+  border: none;
+  box-shadow: 0px 3px white;
+  border-radius: 0px;
+  padding-bottom:10px;
+  padding-left:5px;
+  margin-left: 10px;
+}
+
+#formBasicPassword:focus{
+  box-shadow: 0px 3px #ABFAA3;
+  transition: 500ms ease all;
+}
+
+.usernameFeild{
+  display: flex;
+  flex-direction: row;
+}
+
+.pass{
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-footer .btn-primary{
+  background-color: #ABFAA3;
+  color:#222222;
+  border:none;
+  transition: 0.5s ease all;
+}
+
+.modal-footer .btn-primary:hover{
+  background-color: rgb(123, 224, 111);
+  color:#222222;
+}
+
+.logOutBox .btn-primary{
+  background-color: #ABFAA3;
+  border:1px solid #ABFAA3;
+  transition: 0.5s ease all;
+  color: #222222;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.logOutBox .btn-primary:hover{
+  color: #ABFAA3;
+  background-color:#222222;
+  transition: 0.5s ease all;
+  border:1px solid #ABFAA3;
 }

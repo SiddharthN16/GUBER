@@ -28,16 +28,29 @@ function Volunteer() {
   }, []);
   
   if (events){
-    return (
-      <div>
-        <div className = "subtitle">
-            <h2>Volunteer</h2>
+    if (events.length === 0){
+      return(
+        <div>
+          <div className = "subtitle">
+              <h2>Volunteer</h2>
+          </div>
+          <div className = "events-container">
+            <h3 style = {{padding:"40px"}}>Sorry, there are no events at this time.</h3>
+          </div>
         </div>
-        <div className = "events-container">
-          {events.map(event => <Event name = {event.name} description = {event.desc} volunteers = {event.volunteers} image = {event.image}/>)}
+      );
+    }else{
+      return (
+        <div>
+          <div className = "subtitle">
+              <h2>Volunteer</h2>
+          </div>
+          <div className = "events-container">
+            {events.map(event => <Event name = {event.name} description = {event.desc} volunteers = {event.volunteers} image = {event.image}/>)}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }else{
     return (
       <div>
@@ -45,7 +58,7 @@ function Volunteer() {
             <h2>Volunteer</h2>
         </div>
         <div className = "events-container">
-          <h1>Loading...</h1>
+          <h1 style = {{padding:"40px"}}>Loading...</h1>
         </div>
       </div>
     );

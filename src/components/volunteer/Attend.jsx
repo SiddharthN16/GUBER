@@ -15,17 +15,15 @@ const Attend = ({ items, name, description, volunteers, image }) => {
 
   return (
     <div className = "dashAttend">
-      <Container>
-        <div className = "event-holder">
-          <div className = "text-container">
-            <img src = { image }></img>
-            <h3>{ name }</h3>
-            <p style = {{fontWeight: 600, color: "#ABFAA3"}}>{ volunteers } Volunteer Spots</p>
-            <p>{ description }</p>
-          </div>
-          <Button onClick={handleShow}>Attend</Button>
+      <div className = "event-holder">
+        <div className = "text-container">
+          <img src = { image }></img>
+          <h3>{ name }</h3>
+          <p style = {{fontWeight: 600, color: "#ABFAA3"}}>{ volunteers } Volunteer Spots</p>
+          <p>{ description }</p>
         </div>
-      </Container>
+        <Button onClick={handleShow}>Attend</Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
