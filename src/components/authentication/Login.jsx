@@ -4,7 +4,7 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Form, Alert } from "react-bootstrap";
 import GoogleButton from "react-google-button";
-import logo from "../../assets/logo.svg"
+import logo from "../../assets/logo.svg";
 import passLogo from "../../assets/Password.svg";
 import userLogo from "../../assets/User-icon.svg";
 
@@ -43,19 +43,19 @@ const Login = ({ children }) => {
   }
 
   return (
-    <div id = "login" style = {{color: "white"}}>
+    <div id="login" style={{ color: "white" }}>
       <div className="p-4 mt-3 box">
-        <img src = {logo} style = {{width: "270px", height: "auto"}}/>
+        <img src={logo} alt="Guber Logo" style={{ width: "270px", height: "auto" }} />
         <h2 className="mb-3">Volunteer Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3 usernameFeild" controlId="formBasicEmail">
-            <img src = {userLogo} style = {{width: "25px"}}/>
+            <img src={userLogo} alt="username logo" style={{ width: "25px" }} />
             <Form.Control type="email" placeholder="Email address" onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3 pass" controlId="formBasicPassword">
-            <img src = {passLogo} style = {{width: "25px"}}/>
+            <img src={passLogo} alt="password logo" style={{ width: "25px" }} />
             <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
 
@@ -65,7 +65,7 @@ const Login = ({ children }) => {
             </Button>
           </div>
         </Form>
-        <div className = "googleAuthBtn">
+        <div className="googleAuthBtn">
           <GoogleButton className="g-btn" type="dark" onClick={handleGoogleSignIn} />
         </div>
       </div>
