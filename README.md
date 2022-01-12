@@ -34,10 +34,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Used to add the google maps; using the map and markers to display the user's selected location, and useJsApiLoader to load the map.<br/>
 Documentation refered to: https://react-google-maps-api-docs.netlify.app/
 
-### `npm install bootstrap`
+### `npm install react-bootstrap`
 
-Used to quick style for rapid testing, helped us focus on functionality when developing systems that required more back-end work (login/signup/dashboard).<br/>
-Documentation refered to: https://getbootstrap.com/docs/4.1/getting-started/introduction/
+Used to quickly style for rapid testing, helped us focus on functionality when developing systems that required more back-end work (login/signup/dashboard).<br/>
+Documentation refered to: https://react-bootstrap.github.io/
 
 ### `npm install firebase`
 
