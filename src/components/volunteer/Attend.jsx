@@ -12,6 +12,7 @@ const Attend = ({ items, name, description, volunteers, image }) => {
     setShow(true);
   };
 
+  // elements for the dashboard event including modal and clenaup event cards
   return (
     <div className="dashAttend">
       <div className="event-holder">

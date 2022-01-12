@@ -11,11 +11,13 @@ const Capture = () => {
 
   let navigate = useNavigate();
 
+  // used to create the image names as the current date + time
   const today = new Date();
   const imgName = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}_${today.getDate()}-${
     today.getMonth() + 1
   }-${today.getFullYear()}`;
 
+  // function to display the user uploaded image
   const showUploaded = (e) => {
     setUpload(false);
     if (e.target.files.length > 0) {
@@ -24,21 +26,27 @@ const Capture = () => {
     setImgFile(e.target.files[0]);
   };
 
+  // function to store the image to the firebase stoorage
   const storeImg = (event) => {
     event.preventDefault();
+    // if there is not image uploaded, upload the image
     if (uploaded === false && image !== "") {
       let storageRef = uploadRef(storage, `/review/${imgName}`);
+      // upload all the bytes of the image
       uploadBytesResumable(storageRef, imgFile).on("state_changed", (snapshot) => {
         while ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 < 100) {
           console.log((snapshot.totalBytes / snapshot.bytesTransferred) * 100 !== 100);
         }
+        // when all bytes uploaded, image is fully uploaded
         if ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 === 100) {
           alert("Upload Done!");
           setUpload(true);
           navigate("/dashboard");
         }
       });
-    } else {
+    }
+    // errors messages
+    else {
       if (!imgFile) {
         alert("Please Upload an Image of the location");
       } else {
@@ -47,17 +55,19 @@ const Capture = () => {
     }
   };
 
-
+  // building the capture page
   return (
-    <div class = "capSec2">
-      <form className = "captureSec">
+    <div class="capSec2">
+      <form className="captureSec">
         <h1>Cleanup Image</h1>
-        <p style = {{width: "80%"}}>Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!</p>
+        <p style={{ width: "80%" }}>
+          Submit the Image of your Garbage Cleanup for Manual Review. Return to the Dashboard when Done!
+        </p>
         <label for="imgUpload" className="imgInputField" style={{ backgroundImage: `URL(${image})` }}>
           "Upload Image Here"
           <input id="imgUpload" type="file" accept="image/*" onChange={showUploaded} />
         </label>
-        <Button className = "sub-Capture" onClick={storeImg}>
+        <Button className="sub-Capture" onClick={storeImg}>
           Submit
         </Button>
       </form>

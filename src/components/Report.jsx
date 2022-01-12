@@ -5,12 +5,13 @@ import { ref as uploadRef, uploadBytesResumable, getDownloadURL } from "firebase
 import { ref as dbRef, set } from "firebase/database";
 import { storage } from "../firebase";
 import { db as database } from "../firebase";
-
 import { Button } from "react-bootstrap";
 
+// google maps api key
 const apiKey = "AIzaSyBI3mSmIlTQwxACtvrJzt2GdwvTWHWiOSM";
 
 function Report() {
+  // all the usestates for the form information
   const [image, setImage] = useState("");
   const [cords, setCords] = useState();
   const [name, setName] = useState("");
@@ -22,6 +23,7 @@ function Report() {
 
   let navigate = useNavigate();
 
+  // function used to set the marker based on the location
   function handleMarker(e) {
     let lat = e.latLng.lat();
     let lng = e.latLng.lng();
@@ -30,6 +32,7 @@ function Report() {
     console.log(marker);
   }
 
+  // show the uploaded image of where garbage was spotted
   function showUploaded(e) {
     setUpload(false);
     if (e.target.files.length > 0) {
@@ -38,20 +41,24 @@ function Report() {
     setImgFile(e.target.files[0]);
   }
 
+  // set the name of the park from the form
   function handleChange(e) {
     setName(e.target.value);
   }
 
+  // set the number of volunteers required from the form
   function handleVolunteers(e) {
     setVolunteers(e.target.value);
   }
 
+  // function used to get the users location
   async function getAddress(lat, lng) {
     let reqLink = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`;
 
     const response = await fetch(reqLink);
 
     let data = await response.json();
+    // when there is a response, fill in the location type information
     if (data) {
       data = data.results[0].address_components;
 
@@ -77,6 +84,7 @@ function Report() {
     lng: -79.6441,
   };
 
+  // used to set the marker to the user's location
   if (!cords) {
     navigator.geolocation.getCurrentPosition(
       async function (position) {
@@ -92,20 +100,25 @@ function Report() {
         }, 100);
         getAddress(position.coords.latitude, position.coords.longitude);
       },
+      // default location on map if location services is disables and sets
       (error) => {
         setCords(missisaugaLocation);
       }
     );
   }
 
+  // used to store the image from the firebase
   function storeImg(event) {
     event.preventDefault();
+    // when the image is not uploaded, upload image
     if (uploaded === false && image !== "") {
       let storageRef = uploadRef(storage, `/images/${desc}${imgFile.name}`);
+      // upload all the bytes of the image
       uploadBytesResumable(storageRef, imgFile).on("state_changed", (snapshot) => {
         while ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 < 100) {
           console.log((snapshot.totalBytes / snapshot.bytesTransferred) * 100 !== 100);
         }
+        // when all bytes are transferred, upload is done
         if ((snapshot.totalBytes / snapshot.bytesTransferred) * 100 === 100) {
           alert("Upload Done!");
           setUpload(true);
@@ -115,6 +128,7 @@ function Report() {
         }
       });
     } else {
+      // throw errors
       if (!imgFile) {
         alert("Please Upload an Image of the location");
       } else {
@@ -122,7 +136,7 @@ function Report() {
       }
     }
   }
-
+  // upload all the gathered report information from the form to upload to database
   function uploadInfo() {
     if (name && name !== "" && desc && desc !== "" && image && image !== "" && volunteers && volunteers !== "") {
       getDownloadURL(uploadRef(storage, `/images/${desc}${imgFile.name}`))
@@ -141,7 +155,7 @@ function Report() {
       alert("Please fill in all the feilds");
     }
   }
-
+  // build the report page
   return (
     <div className="report-sec">
       <h1 className="call-to-action-report">See Garbage at your local park, or location?</h1>

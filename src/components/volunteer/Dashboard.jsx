@@ -14,6 +14,7 @@ const Dashboard = () => {
 
   const eventInfo = ref(db, "/Events");
 
+  // when there is incoming data from the database append it to an array to build the cards
   useEffect(() => {
     const getEvents = async () => {
       const eventData = await onValue(eventInfo, (snapshot) => {
@@ -33,6 +34,7 @@ const Dashboard = () => {
     getEvents();
   }, []);
 
+  // when logout button is pressed
   const handleLogout = async () => {
     try {
       await logOut();
@@ -42,14 +44,14 @@ const Dashboard = () => {
     }
   };
 
-
+  // if there are events map them to build the cards from the Event component
   if (events) {
     return (
       <div>
-        <div id = "dashboard">
+        <div id="dashboard">
           <>
             <div className="p-4 box mt-3 text-center dashCenter">
-              <span className = "dashTitle">Volunteer Dashboard</span> <br />
+              <span className="dashTitle">Volunteer Dashboard</span> <br />
               {user && user.email}
               <div className="d-grid gap-2 logOutBox">
                 <Button variant="primary" onClick={handleLogout}>
@@ -71,18 +73,18 @@ const Dashboard = () => {
             />
           ))}
         </div>
-
       </div>
     );
   }
 
+  // otherwise display no cards
   return (
     <div>
-      <div id = "dashboard">
+      <div id="dashboard">
         <div className="p-4 box mt-3 text-center dashCenter">
-          <span class = "dashTitle">Volunteer Dashboard</span> <br />
+          <span class="dashTitle">Volunteer Dashboard</span> <br />
           {user && user.email}
-		      <div className="d-grid gap-2 logOutBox">
+          <div className="d-grid gap-2 logOutBox">
             <Button variant="primary" onClick={handleLogout}>
               Log out
             </Button>

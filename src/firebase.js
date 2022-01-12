@@ -4,6 +4,7 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
+// the firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyBT5akNIvcfrz2ZopAZSlWhjIxfcB9N0N8",
   authDomain: "guber-fac21.firebaseapp.com",
@@ -18,6 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// export require firebase functions
 export const auth = getAuth(app);
 export const db = getDatabase(app);
 export const storage = getStorage(app);

@@ -1,3 +1,4 @@
+// Guber's Terms of Service
 function Terms() {
   return (
     <div className="agreements">

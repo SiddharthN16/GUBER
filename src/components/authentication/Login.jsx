@@ -15,21 +15,26 @@ const Login = ({ children }) => {
   const { logIn, googleSignIn, user } = useUserAuth();
   const navigate = useNavigate();
 
+  // handle what hapepns when form is submitted
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
+    // if login is successful navigate to dashboard
     try {
       await logIn(email, password);
       navigate("/dashboard");
     } catch (err) {
+      // otherwise throw error
       setError(err.message);
     }
   };
 
+  // when google sign in button is pressed
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
 
+    // attempt to authenticate via google
     try {
       await googleSignIn();
       navigate("/dashboard");
@@ -38,10 +43,12 @@ const Login = ({ children }) => {
     }
   };
 
+  // if user is already signed in  navigate to dashboard
   if (user) {
     return <Navigate replace to="/dashboard" />;
   }
 
+  // create the form + buttons for the login page
   return (
     <div id="login" style={{ color: "white" }}>
       <div className="p-4 mt-3 box">

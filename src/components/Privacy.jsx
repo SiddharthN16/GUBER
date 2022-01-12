@@ -1,3 +1,4 @@
+// Guber's privacy policy
 const Privacy = () => {
   return (
     <div className="agreements">
@@ -76,9 +77,7 @@ const Privacy = () => {
         <li>
           <p>
             <strong>Website</strong> refers to Guber, accessible from{" "}
-            <a href="https://guber.pages.dev/" rel="external nofollow noopener" target="_blank">
-              https://guber.pages.dev/
-            </a>
+            <a href="https://guber.pages.dev/">https://guber.pages.dev/</a>
           </p>
         </li>
         <li>
@@ -370,7 +369,7 @@ const Privacy = () => {
       <h1>Contact Us</h1>
       <p>If you have any questions about this Privacy Policy, You can contact us:</p>
       <ul>
-        <li>By email: siddharthnema04@gmail.com</li>
+        <li>By email: email@email.com</li>
       </ul>
     </div>
   );

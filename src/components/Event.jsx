@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Event({ name, description, volunteers, image }) {
+  // the cleanup cards to be displayed on the landing page
   return (
     <div className="event-holder">
       <div className="text-container">

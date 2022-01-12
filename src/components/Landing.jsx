@@ -3,6 +3,7 @@ import logo from "../assets/guber.svg";
 import { Link } from "react-router-dom";
 
 function Landing() {
+  // the landing page of the website
   return (
     <div>
       <div className="call-to-action">

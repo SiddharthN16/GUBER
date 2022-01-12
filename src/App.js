@@ -20,6 +20,7 @@ import { Row, Col } from "react-bootstrap";
 
 function App() {
   return (
+    // all the routes for the web app
     <Row>
       <Col>
         <UserAuthContextProvider>

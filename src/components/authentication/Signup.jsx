@@ -14,10 +14,12 @@ const Signup = () => {
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
+  // handles when signup form is submitted
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
+    // authenticate the signup
     try {
       await signUp(email, password);
       navigate("/login");
@@ -26,6 +28,7 @@ const Signup = () => {
     }
   };
 
+  // form to create the signup page
   return (
     <div id="signup">
       <div className="p-4 mt-3 box">

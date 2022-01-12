@@ -8,6 +8,7 @@ function Volunteer() {
 
   const eventInfo = ref(database, "/Events");
 
+  // function to gather information from the database about the event cards
   useEffect(() => {
     const getEvents = async () => {
       const eventData = await onValue(eventInfo, (snapshot) => {
@@ -27,7 +28,9 @@ function Volunteer() {
     getEvents();
   }, []);
 
+  // if there are events create the cleanup cards to be displayed
   if (events) {
+    // if there are no events
     if (events.length === 0) {
       return (
         <div>
@@ -54,6 +57,7 @@ function Volunteer() {
       );
     }
   } else {
+    // While the cards are still rendering in
     return (
       <div>
         <div className="subtitle">
